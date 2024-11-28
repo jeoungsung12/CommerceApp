@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		E4F3225C2CF72FE700D35702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3225B2CF72FE700D35702 /* AppDelegate.swift */; };
 		E4F3225E2CF72FE700D35702 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3225D2CF72FE700D35702 /* SceneDelegate.swift */; };
-		E4F322602CF72FE700D35702 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3225F2CF72FE700D35702 /* ViewController.swift */; };
-		E4F322632CF72FE700D35702 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E4F322622CF72FE700D35702 /* Base */; };
-		E4F322652CF72FE900D35702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F322642CF72FE900D35702 /* Assets.xcassets */; };
 		E4F322682CF72FE900D35702 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E4F322672CF72FE900D35702 /* Base */; };
 		E4F322732CF72FE900D35702 /* CommerceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322722CF72FE900D35702 /* CommerceAppTests.swift */; };
 		E4F3227D2CF72FE900D35702 /* CommerceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3227C2CF72FE900D35702 /* CommerceAppUITests.swift */; };
@@ -21,6 +18,13 @@
 		E4F322912CF7397B00D35702 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F322902CF7397B00D35702 /* Colors.xcassets */; };
 		E4F322932CF73B1700D35702 /* CPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322922CF73B1700D35702 /* CPColor.swift */; };
 		E4F322952CF73B9200D35702 /* CPFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322942CF73B9200D35702 /* CPFont.swift */; };
+		E4F3229D2CF8588100D35702 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F3229C2CF8588100D35702 /* Splash.storyboard */; };
+		E4F3229F2CF8588C00D35702 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3229E2CF8588C00D35702 /* SplashViewController.swift */; };
+		E4F322A32CF8590F00D35702 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E4F322A22CF8590F00D35702 /* Lottie */; };
+		E4F322A92CF85DA400D35702 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322A82CF85DA400D35702 /* HomeViewController.swift */; };
+		E4F322AB2CF85DCE00D35702 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F322AA2CF85DCE00D35702 /* Home.storyboard */; };
+		E4F322AF2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */; };
+		E4F322B32CF863D400D35702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F322B22CF863D300D35702 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +48,6 @@
 		E4F322582CF72FE700D35702 /* CommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F3225B2CF72FE700D35702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F3225D2CF72FE700D35702 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4F3225F2CF72FE700D35702 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E4F322622CF72FE700D35702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E4F322642CF72FE900D35702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4F322672CF72FE900D35702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4F322692CF72FE900D35702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4F3226E2CF72FE900D35702 /* CommerceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommerceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +60,12 @@
 		E4F322902CF7397B00D35702 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E4F322922CF73B1700D35702 /* CPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPColor.swift; sourceTree = "<group>"; };
 		E4F322942CF73B9200D35702 /* CPFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFont.swift; sourceTree = "<group>"; };
+		E4F3229C2CF8588100D35702 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		E4F3229E2CF8588C00D35702 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		E4F322A82CF85DA400D35702 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E4F322AA2CF85DCE00D35702 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4F322B22CF863D300D35702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F322A32CF8590F00D35702 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +101,7 @@
 				E4F322712CF72FE900D35702 /* CommerceAppTests */,
 				E4F3227B2CF72FE900D35702 /* CommerceAppUITests */,
 				E4F322592CF72FE700D35702 /* Products */,
+				E4F322A12CF8590F00D35702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,13 +118,9 @@
 		E4F3225A2CF72FE700D35702 /* CommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				E4F322A72CF85BAC00D35702 /* Delegates */,
+				E4F322A42CF85B6900D35702 /* Feature */,
 				E4F3228B2CF736A400D35702 /* DesignSource */,
-				E4F3225B2CF72FE700D35702 /* AppDelegate.swift */,
-				E4F3225D2CF72FE700D35702 /* SceneDelegate.swift */,
-				E4F3225F2CF72FE700D35702 /* ViewController.swift */,
-				E4F322612CF72FE700D35702 /* Main.storyboard */,
-				E4F322642CF72FE900D35702 /* Assets.xcassets */,
-				E4F322662CF72FE900D35702 /* LaunchScreen.storyboard */,
 				E4F322692CF72FE900D35702 /* Info.plist */,
 			);
 			path = CommerceApp;
@@ -141,6 +146,7 @@
 		E4F3228B2CF736A400D35702 /* DesignSource */ = {
 			isa = PBXGroup;
 			children = (
+				E4F322B22CF863D300D35702 /* Assets.xcassets */,
 				E4F3228C2CF736C000D35702 /* Images.xcassets */,
 				E4F3228E2CF7379E00D35702 /* CPImages.swift */,
 				E4F322902CF7397B00D35702 /* Colors.xcassets */,
@@ -148,6 +154,51 @@
 				E4F322942CF73B9200D35702 /* CPFont.swift */,
 			);
 			path = DesignSource;
+			sourceTree = "<group>";
+		};
+		E4F322A12CF8590F00D35702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4F322A42CF85B6900D35702 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				E4F322A52CF85B7500D35702 /* Splash */,
+				E4F322A62CF85B7F00D35702 /* Home */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		E4F322A52CF85B7500D35702 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E4F322662CF72FE900D35702 /* LaunchScreen.storyboard */,
+				E4F3229C2CF8588100D35702 /* Splash.storyboard */,
+				E4F3229E2CF8588C00D35702 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		E4F322A62CF85B7F00D35702 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E4F322A82CF85DA400D35702 /* HomeViewController.swift */,
+				E4F322AA2CF85DCE00D35702 /* Home.storyboard */,
+				E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E4F322A72CF85BAC00D35702 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3225B2CF72FE700D35702 /* AppDelegate.swift */,
+				E4F3225D2CF72FE700D35702 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +217,9 @@
 			dependencies = (
 			);
 			name = CommerceApp;
+			packageProductDependencies = (
+				E4F322A22CF8590F00D35702 /* Lottie */,
+			);
 			productName = CommerceApp;
 			productReference = E4F322582CF72FE700D35702 /* CommerceApp.app */;
 			productType = "com.apple.product-type.application";
@@ -238,6 +292,9 @@
 				Base,
 			);
 			mainGroup = E4F3224F2CF72FE700D35702;
+			packageReferences = (
+				E4F322A02CF858DA00D35702 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = E4F322592CF72FE700D35702 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,10 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F322912CF7397B00D35702 /* Colors.xcassets in Resources */,
-				E4F322652CF72FE900D35702 /* Assets.xcassets in Resources */,
 				E4F3228D2CF736C000D35702 /* Images.xcassets in Resources */,
+				E4F322AB2CF85DCE00D35702 /* Home.storyboard in Resources */,
 				E4F322682CF72FE900D35702 /* Base in Resources */,
-				E4F322632CF72FE700D35702 /* Base in Resources */,
+				E4F322B32CF863D400D35702 /* Assets.xcassets in Resources */,
+				E4F3229D2CF8588100D35702 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,10 +343,12 @@
 			files = (
 				E4F322932CF73B1700D35702 /* CPColor.swift in Sources */,
 				E4F322952CF73B9200D35702 /* CPFont.swift in Sources */,
-				E4F322602CF72FE700D35702 /* ViewController.swift in Sources */,
 				E4F3225C2CF72FE700D35702 /* AppDelegate.swift in Sources */,
 				E4F3228F2CF7379E00D35702 /* CPImages.swift in Sources */,
+				E4F3229F2CF8588C00D35702 /* SplashViewController.swift in Sources */,
+				E4F322A92CF85DA400D35702 /* HomeViewController.swift in Sources */,
 				E4F3225E2CF72FE700D35702 /* SceneDelegate.swift in Sources */,
+				E4F322AF2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +385,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E4F322612CF72FE700D35702 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4F322622CF72FE700D35702 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4F322662CF72FE900D35702 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -474,7 +526,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommerceApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,7 +554,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommerceApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -633,6 +687,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4F322A02CF858DA00D35702 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4F322A22CF8590F00D35702 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F322A02CF858DA00D35702 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4F322502CF72FE700D35702 /* Project object */;
 }

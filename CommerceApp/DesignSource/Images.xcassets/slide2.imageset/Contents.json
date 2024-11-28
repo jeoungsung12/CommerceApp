@@ -1,9 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "filename" : "slide2.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
