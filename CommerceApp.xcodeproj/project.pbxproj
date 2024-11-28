@@ -25,6 +25,7 @@
 		E4F322AB2CF85DCE00D35702 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F322AA2CF85DCE00D35702 /* Home.storyboard */; };
 		E4F322AF2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */; };
 		E4F322B32CF863D400D35702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F322B22CF863D300D35702 /* Assets.xcassets */; };
+		E4F322B52CF86AFD00D35702 /* HomeProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322B42CF86AFD00D35702 /* HomeProductCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		E4F322AA2CF85DCE00D35702 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4F322B22CF863D300D35702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4F322B42CF86AFD00D35702 /* HomeProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				E4F322A82CF85DA400D35702 /* HomeViewController.swift */,
 				E4F322AA2CF85DCE00D35702 /* Home.storyboard */,
 				E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */,
+				E4F322B42CF86AFD00D35702 /* HomeProductCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F322932CF73B1700D35702 /* CPColor.swift in Sources */,
+				E4F322B52CF86AFD00D35702 /* HomeProductCollectionViewCell.swift in Sources */,
 				E4F322952CF73B9200D35702 /* CPFont.swift in Sources */,
 				E4F3225C2CF72FE700D35702 /* AppDelegate.swift in Sources */,
 				E4F3228F2CF7379E00D35702 /* CPImages.swift in Sources */,
