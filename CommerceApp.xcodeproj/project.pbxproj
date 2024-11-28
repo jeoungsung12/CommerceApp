@@ -30,6 +30,7 @@
 		E4F322BC2CF8793F00D35702 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322BB2CF8793F00D35702 /* HomeResponse.swift */; };
 		E4F322BF2CF88E2E00D35702 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4F322BE2CF88E2E00D35702 /* Kingfisher */; };
 		E4F322C12CF8902600D35702 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C02CF8902600D35702 /* HomeViewModel.swift */; };
+		E4F322C42CF8AFC400D35702 /* Numeric + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E4F322B82CF8788100D35702 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E4F322BB2CF8793F00D35702 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		E4F322C02CF8902600D35702 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		E4F3225A2CF72FE700D35702 /* CommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				E4F322C22CF8AFB200D35702 /* Extension */,
 				E4F322BA2CF8793700D35702 /* Model */,
 				E4F322B72CF8787600D35702 /* Network */,
 				E4F322A72CF85BAC00D35702 /* Delegates */,
@@ -237,6 +240,14 @@
 				E4F322BB2CF8793F00D35702 /* HomeResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E4F322C22CF8AFB200D35702 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +401,7 @@
 				E4F3229F2CF8588C00D35702 /* SplashViewController.swift in Sources */,
 				E4F322C12CF8902600D35702 /* HomeViewModel.swift in Sources */,
 				E4F322A92CF85DA400D35702 /* HomeViewController.swift in Sources */,
+				E4F322C42CF8AFC400D35702 /* Numeric + Extension.swift in Sources */,
 				E4F3225E2CF72FE700D35702 /* SceneDelegate.swift in Sources */,
 				E4F322AF2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift in Sources */,
 				E4F322BC2CF8793F00D35702 /* HomeResponse.swift in Sources */,

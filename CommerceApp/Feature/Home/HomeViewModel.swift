@@ -9,20 +9,41 @@ import Foundation
 import Combine
 
 class HomeViewModel {
-    @Published var bannerViewModel: [HomeBannerCollectionViewCellViewModel]?
-    @Published var horizontalViewModel: [HomeProductCollectionViewCellViewModel]?
-    @Published var verticalViewModel: [HomeProductCollectionViewCellViewModel]?
-    
+    enum Action {
+        case loadData
+        case getDataSuccess(HomeResponse)
+        case getDataFailure(Error)
+    }
+    final class State {
+        struct CollectionViewModels {
+            var bannerViewModel: [HomeBannerCollectionViewCellViewModel]?
+            var horizontalViewModel: [HomeProductCollectionViewCellViewModel]?
+            var verticalViewModel: [HomeProductCollectionViewCellViewModel]?
+        }
+        @Published var collectionViewModels: CollectionViewModels = CollectionViewModels()
+    }
+    private(set) var state: State = State()
     private var loadDataTask: Task<Void, Never>?
-    func loadData() {
+    
+    func process(action: Action) {
+        switch action {
+        case .loadData:
+            loadData()
+        case .getDataSuccess(let response):
+            transformResponses(response)
+            
+        case .getDataFailure(let error):
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    private func loadData() {
         loadDataTask = Task {
             do {
                 let response = try await NetworkService.shared.getHomeData()
-                Task { await transforBanner(response) }
-                Task { await transforHorizontal(response) }
-                Task { await transforVertical(response) }
+                process(action: .getDataSuccess(response))
             } catch {
-                print("error: \(error.localizedDescription)")
+                process(action: .getDataFailure(error))
             }
         }
     }
@@ -31,25 +52,32 @@ class HomeViewModel {
         loadDataTask?.cancel()
     }
     
+    private func transformResponses(_ response: HomeResponse) {
+        Task { await transforBanner(response) }
+        Task { await transforHorizontal(response) }
+        Task { await transforVertical(response) }
+    }
+    
     @MainActor
     private func transforBanner(_ response: HomeResponse) async {
-        bannerViewModel = response.banners.map {
+        state.collectionViewModels.bannerViewModel = response.banners.map {
             HomeBannerCollectionViewCellViewModel(bannerImage: $0.imageUrl)
         }
     }
     
     @MainActor
     private func transforHorizontal(_ response: HomeResponse) async {
-        horizontalViewModel = response.horizontalProducts.map {
-            HomeProductCollectionViewCellViewModel(imageUrlString: $0.imageUrl, title: $0.title, reasonDiscountString: $0.discount, originalPrice: "\($0.originalPrice)", discountPrice: "\($0.discountPrice)")
-        }
+        state.collectionViewModels.horizontalViewModel = productToHomeProductCollectionViewCellViewModel(response.horizontalProducts)
     }
     
     @MainActor
     private func transforVertical(_ response: HomeResponse) async {
-        verticalViewModel = response.verticalProducts.map {
-            HomeProductCollectionViewCellViewModel(imageUrlString: $0.imageUrl, title: $0.title, reasonDiscountString: $0.discount, originalPrice: "\($0.originalPrice)", discountPrice: "\($0.discountPrice)")
-        }
+        state.collectionViewModels.verticalViewModel = productToHomeProductCollectionViewCellViewModel(response.verticalProducts)
     }
     
+    private func productToHomeProductCollectionViewCellViewModel(_ product: [Product]) -> [HomeProductCollectionViewCellViewModel] {
+        return product.map {
+            HomeProductCollectionViewCellViewModel(imageUrlString: $0.imageUrl, title: $0.title, reasonDiscountString: $0.discount, originalPrice: $0.originalPrice.moneyString, discountPrice: $0.discountPrice.moneyString)
+        }
+    }
 }
