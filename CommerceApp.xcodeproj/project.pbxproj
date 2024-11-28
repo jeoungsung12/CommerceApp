@@ -31,6 +31,7 @@
 		E4F322BF2CF88E2E00D35702 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4F322BE2CF88E2E00D35702 /* Kingfisher */; };
 		E4F322C12CF8902600D35702 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C02CF8902600D35702 /* HomeViewModel.swift */; };
 		E4F322C42CF8AFC400D35702 /* Numeric + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */; };
+		E4F322C62CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C52CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E4F322BB2CF8793F00D35702 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		E4F322C02CF8902600D35702 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric + Extension.swift"; sourceTree = "<group>"; };
+		E4F322C52CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCouponButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			children = (
 				E4F322AE2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift */,
 				E4F322B42CF86AFD00D35702 /* HomeProductCollectionViewCell.swift */,
+				E4F322C52CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				E4F322B52CF86AFD00D35702 /* HomeProductCollectionViewCell.swift in Sources */,
 				E4F322952CF73B9200D35702 /* CPFont.swift in Sources */,
 				E4F3225C2CF72FE700D35702 /* AppDelegate.swift in Sources */,
+				E4F322C62CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift in Sources */,
 				E4F3228F2CF7379E00D35702 /* CPImages.swift in Sources */,
 				E4F3229F2CF8588C00D35702 /* SplashViewController.swift in Sources */,
 				E4F322C12CF8902600D35702 /* HomeViewModel.swift in Sources */,

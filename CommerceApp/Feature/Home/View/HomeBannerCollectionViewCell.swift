@@ -12,9 +12,9 @@ struct HomeBannerCollectionViewCellViewModel: Hashable {
     let bannerImage: String
 }
 
-class HomeBannerCollectionViewCell: UICollectionViewCell {
+final class HomeBannerCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     
     func setViewModel(_ viewModel: HomeBannerCollectionViewCellViewModel) {
         guard let url = URL(string: viewModel.bannerImage) else { return }
@@ -33,6 +33,7 @@ extension HomeBannerCollectionViewCell {
         
         let section: NSCollectionLayoutSection = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         return section
     }
 }

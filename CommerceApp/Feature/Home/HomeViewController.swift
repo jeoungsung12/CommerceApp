@@ -8,39 +8,48 @@
 import UIKit
 import Combine
 
-class HomeViewController: UIViewController {
-    
-    enum Section: Int {
+final class HomeViewController: UIViewController {
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, AnyHashable>
+    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, AnyHashable>
+    private enum Section: Int {
         case banner
         case horizontalProductItem
+        case couponButton
         case verticalProductItem
     }
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>?
-    private var compositinalLayout: UICollectionViewCompositionalLayout = setCompositionalLayout()
+    @IBOutlet private weak var collectionView: UICollectionView!
+    private lazy var dataSource: DataSource = setDataSource()
+    private lazy var compositinalLayout: UICollectionViewCompositionalLayout = setCompositionalLayout()
     private var viewModel: HomeViewModel = HomeViewModel()
     private var subscriptions = Set<AnyCancellable>()
+    private var currentSection: [Section] {
+        dataSource.snapshot().sectionIdentifiers as [Section]
+    }
+    private var didTapCouponDownload: PassthroughSubject<Void, Never> = PassthroughSubject<Void, Never>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.bindgingViewModel()
-        self.setDataSource()
         
         collectionView.collectionViewLayout = compositinalLayout
         
         self.viewModel.process(action: .loadData)
+        self.viewModel.process(action: .loadCoupon)
     }
 
-    private static func setCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { section, _ in
-            switch Section(rawValue: section) {
+    private func setCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout { [weak self] section, _ in
+            switch self?.currentSection[section] {
             case .banner:
                 return HomeBannerCollectionViewCell.BannerItemLayout()
                 
             case .horizontalProductItem:
                 return HomeProductCollectionViewCell.horizontalProductItemLayout()
+                
+            case .couponButton:
+                return HomeCouponButtonCollectionViewCell.couponButtonItemLayout()
                 
             case .verticalProductItem:
                 return HomeProductCollectionViewCell.verticalProductItemLayout()
@@ -56,15 +65,21 @@ class HomeViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.applySnapShot()
             }.store(in: &subscriptions)
+        didTapCouponDownload.receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.viewModel.process(action: .didTapCouponButton)
+            }.store(in: &subscriptions)
     }
     
-    private func setDataSource() {
-        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, viewModel in
-            switch Section(rawValue: indexPath.section) {
+    private func setDataSource() -> DataSource {
+        return UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { [weak self] collectionView, indexPath, viewModel in
+            switch self?.currentSection[indexPath.section] {
             case .banner:
-                return self.bannerCell(collectionView, indexPath, viewModel)
+                return self?.bannerCell(collectionView, indexPath, viewModel)
             case .horizontalProductItem, .verticalProductItem:
-                return self.productCell(collectionView, indexPath, viewModel)
+                return self?.productCell(collectionView, indexPath, viewModel)
+            case .couponButton:
+                return self?.couponButtonCell(collectionView, indexPath, viewModel)
             case .none:
                 return .init()
             }
@@ -72,9 +87,7 @@ class HomeViewController: UIViewController {
     }
     
     private func applySnapShot() {
-        var snapShot: NSDiffableDataSourceSnapshot<Section, AnyHashable> =
-        NSDiffableDataSourceSnapshot<
-            Section, AnyHashable>()
+        var snapShot: SnapShot = SnapShot()
         if let bannerViewModels = viewModel.state.collectionViewModels.bannerViewModel {
             snapShot.appendSections([.banner])
             snapShot.appendItems(bannerViewModels, toSection: .banner)
@@ -85,11 +98,16 @@ class HomeViewController: UIViewController {
             snapShot.appendItems(horizontalProductViewModels, toSection: .horizontalProductItem)
         }
         
+        if let couponViewModels = viewModel.state.collectionViewModels.couponStste {
+            snapShot.appendSections([.couponButton])
+            snapShot.appendItems(couponViewModels, toSection: .couponButton)
+        }
+        
         if let verticalProductViewModels = viewModel.state.collectionViewModels.verticalViewModel {
             snapShot.appendSections([.verticalProductItem])
             snapShot.appendItems(verticalProductViewModels, toSection: .verticalProductItem)
         }
-        dataSource?.apply(snapShot)
+        dataSource.apply(snapShot)
     }
     
     private func bannerCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ viewModel: AnyHashable) -> UICollectionViewCell {
@@ -104,6 +122,13 @@ class HomeViewController: UIViewController {
         guard let viewModel = viewModel as? HomeProductCollectionViewCellViewModel,
               let cell: HomeProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionViewCell", for: indexPath) as? HomeProductCollectionViewCell else { return .init() }
         cell.setViewModel(viewModel)
+        return cell
+    }
+    
+    private func couponButtonCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ viewModel: AnyHashable) -> UICollectionViewCell {
+        guard let viewModel = viewModel as? HomeCouponButtonCollectionViewCellViewModel,
+              let cell: HomeCouponButtonCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCouponButtonCollectionViewCell", for: indexPath) as? HomeCouponButtonCollectionViewCell else { return .init() }
+        cell.setViewModel(viewModel, didTapCouponDownload: didTapCouponDownload)
         return cell
     }
 }
