@@ -17,4 +17,5 @@ enum CPColor {
     static var keyColorRed2: UIColor = UIColor(named: "key-color-red2")!
     static var keyColorBlue: UIColor = UIColor(named: "key-color-blue")!
     static var keyColorBlueTrans: UIColor = UIColor(named: "key-color-blue-trans")!
+    static var gray1: UIColor = UIColor(named: "gray1")!
 }

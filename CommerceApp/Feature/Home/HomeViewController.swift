@@ -14,8 +14,10 @@ final class HomeViewController: UIViewController {
     private enum Section: Int {
         case banner
         case horizontalProductItem
+        case separateLine1
         case couponButton
         case verticalProductItem
+        case separateLine2
     }
 
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -54,6 +56,9 @@ final class HomeViewController: UIViewController {
             case .verticalProductItem:
                 return HomeProductCollectionViewCell.verticalProductItemLayout()
                 
+            case .separateLine1, .separateLine2:
+                return HomeSperateLineCollectionViewCell.separateLineLayout()
+                
             case .none:
                 return nil
             }
@@ -80,6 +85,8 @@ final class HomeViewController: UIViewController {
                 return self?.productCell(collectionView, indexPath, viewModel)
             case .couponButton:
                 return self?.couponButtonCell(collectionView, indexPath, viewModel)
+            case .separateLine1, .separateLine2:
+                return self?.separateLineCell(collectionView, indexPath, viewModel)
             case .none:
                 return .init()
             }
@@ -96,6 +103,9 @@ final class HomeViewController: UIViewController {
         if let horizontalProductViewModels = viewModel.state.collectionViewModels.horizontalViewModel {
             snapShot.appendSections([.horizontalProductItem])
             snapShot.appendItems(horizontalProductViewModels, toSection: .horizontalProductItem)
+            
+            snapShot.appendSections([.separateLine1])
+            snapShot.appendItems(viewModel.state.collectionViewModels.separateLine1ViewModels, toSection: .separateLine1)
         }
         
         if let couponViewModels = viewModel.state.collectionViewModels.couponStste {
@@ -112,7 +122,7 @@ final class HomeViewController: UIViewController {
     
     private func bannerCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ viewModel: AnyHashable) -> UICollectionViewCell {
         guard let viewModel = viewModel as? HomeBannerCollectionViewCellViewModel,
-              let cell: HomeBannerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeBannerCollectionViewCell", for: indexPath) as? HomeBannerCollectionViewCell
+              let cell: HomeBannerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBannerCollectionViewCell.reusableId, for: indexPath) as? HomeBannerCollectionViewCell
         else { return .init() }
         cell.setViewModel(viewModel)
         return cell
@@ -120,15 +130,22 @@ final class HomeViewController: UIViewController {
     
     private func productCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ viewModel: AnyHashable) -> UICollectionViewCell {
         guard let viewModel = viewModel as? HomeProductCollectionViewCellViewModel,
-              let cell: HomeProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionViewCell", for: indexPath) as? HomeProductCollectionViewCell else { return .init() }
+              let cell: HomeProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeProductCollectionViewCell.reusableId, for: indexPath) as? HomeProductCollectionViewCell else { return .init() }
         cell.setViewModel(viewModel)
         return cell
     }
     
     private func couponButtonCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ viewModel: AnyHashable) -> UICollectionViewCell {
         guard let viewModel = viewModel as? HomeCouponButtonCollectionViewCellViewModel,
-              let cell: HomeCouponButtonCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCouponButtonCollectionViewCell", for: indexPath) as? HomeCouponButtonCollectionViewCell else { return .init() }
+              let cell: HomeCouponButtonCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCouponButtonCollectionViewCell.reusableId, for: indexPath) as? HomeCouponButtonCollectionViewCell else { return .init() }
         cell.setViewModel(viewModel, didTapCouponDownload: didTapCouponDownload)
+        return cell
+    }
+    
+    private func separateLineCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ viewModel: AnyHashable) -> UICollectionViewCell {
+        guard let viewModel = viewModel as? HomeSperateLineCollectionViewCellViewModel,
+              let cell: HomeSperateLineCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeSperateLineCollectionViewCell.reusableId, for: indexPath) as? HomeSperateLineCollectionViewCell else { return .init() }
+        cell.setViewModel(viewModel)
         return cell
     }
 }

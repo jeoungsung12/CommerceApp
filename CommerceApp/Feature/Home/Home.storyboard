@@ -126,7 +126,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCouponButtonCollectionViewCell" id="rf4-2W-ZUq" customClass="HomeCouponButtonCollectionViewCell" customModule="CommerceApp" customModuleProvider="target">
-                                        <rect key="frame" x="106" y="274.66666666666669" width="24" height="14"/>
+                                        <rect key="frame" x="369" y="274.66666666666669" width="24" height="14"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z2J-If-bEq">
                                             <rect key="frame" x="0.0" y="0.0" width="24" height="14"/>
@@ -151,6 +151,14 @@
                                         <connections>
                                             <outlet property="couponButton" destination="Rn0-uG-ylB" id="EtF-5P-j4N"/>
                                         </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeSperateLineCollectionViewCell" id="H1d-tr-RsG" customClass="HomeSperateLineCollectionViewCell" customModule="CommerceApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="359" width="393" height="204"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="opK-fh-DTc">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="204"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

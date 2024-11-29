@@ -13,6 +13,7 @@ struct HomeBannerCollectionViewCellViewModel: Hashable {
 }
 
 final class HomeBannerCollectionViewCell: UICollectionViewCell {
+    static let reusableId: String = "HomeBannerCollectionViewCell"
     
     @IBOutlet private weak var imageView: UIImageView!
     
