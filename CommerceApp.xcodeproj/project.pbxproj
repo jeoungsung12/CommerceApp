@@ -33,6 +33,8 @@
 		E4F322C42CF8AFC400D35702 /* Numeric + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */; };
 		E4F322C62CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C52CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift */; };
 		E4F322C82CF990B100D35702 /* HomeSperateLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C72CF990B100D35702 /* HomeSperateLineCollectionViewCell.swift */; };
+		E4F322CA2CF99F3F00D35702 /* HomeThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322C92CF99F3F00D35702 /* HomeThemeCollectionViewCell.swift */; };
+		E4F322CC2CF9A2E800D35702 /* HomeThemeHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322CB2CF9A2E800D35702 /* HomeThemeHeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		E4F322C32CF8AFC400D35702 /* Numeric + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric + Extension.swift"; sourceTree = "<group>"; };
 		E4F322C52CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCouponButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4F322C72CF990B100D35702 /* HomeSperateLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSperateLineCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4F322C92CF99F3F00D35702 /* HomeThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4F322CB2CF9A2E800D35702 /* HomeThemeHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,8 @@
 				E4F322B42CF86AFD00D35702 /* HomeProductCollectionViewCell.swift */,
 				E4F322C52CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift */,
 				E4F322C72CF990B100D35702 /* HomeSperateLineCollectionViewCell.swift */,
+				E4F322C92CF99F3F00D35702 /* HomeThemeCollectionViewCell.swift */,
+				E4F322CB2CF9A2E800D35702 /* HomeThemeHeaderCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				E4F322B52CF86AFD00D35702 /* HomeProductCollectionViewCell.swift in Sources */,
 				E4F322952CF73B9200D35702 /* CPFont.swift in Sources */,
 				E4F3225C2CF72FE700D35702 /* AppDelegate.swift in Sources */,
+				E4F322CC2CF9A2E800D35702 /* HomeThemeHeaderCollectionReusableView.swift in Sources */,
 				E4F322C62CF8B33F00D35702 /* HomeCouponButtonCollectionViewCell.swift in Sources */,
 				E4F3228F2CF7379E00D35702 /* CPImages.swift in Sources */,
 				E4F3229F2CF8588C00D35702 /* SplashViewController.swift in Sources */,
@@ -411,6 +418,7 @@
 				E4F322A92CF85DA400D35702 /* HomeViewController.swift in Sources */,
 				E4F322C42CF8AFC400D35702 /* Numeric + Extension.swift in Sources */,
 				E4F3225E2CF72FE700D35702 /* SceneDelegate.swift in Sources */,
+				E4F322CA2CF99F3F00D35702 /* HomeThemeCollectionViewCell.swift in Sources */,
 				E4F322AF2CF85F9E00D35702 /* HomeBannerCollectionViewCell.swift in Sources */,
 				E4F322BC2CF8793F00D35702 /* HomeResponse.swift in Sources */,
 			);

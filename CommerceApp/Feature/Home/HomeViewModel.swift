@@ -26,6 +26,7 @@ final class HomeViewModel {
             var couponStste: [HomeCouponButtonCollectionViewCellViewModel]?
             var separateLine1ViewModels: [HomeSperateLineCollectionViewCellViewModel] = [HomeSperateLineCollectionViewCellViewModel()]
             var separateLine2ViewModels: [HomeSperateLineCollectionViewCellViewModel] = [HomeSperateLineCollectionViewCellViewModel()]
+            var themeViewModels: (headerViewModel: HomeThemeHeaderCollectionReusableViewModel, items: [HomeThemeCollectionViewCellViewModel])?
         }
         @Published var collectionViewModels: CollectionViewModels = CollectionViewModels()
     }
@@ -88,6 +89,7 @@ extension HomeViewModel {
         Task { await transforBanner(response) }
         Task { await transforHorizontal(response) }
         Task { await transforVertical(response) }
+        Task { await transformTheme(response) }
     }
     
     @MainActor
@@ -121,5 +123,13 @@ extension HomeViewModel {
     private func downloadCoupon() {
         UserDefaults.standard.setValue(true, forKey: self.couponDownloadedKey)
         process(action: .loadCoupon)
+    }
+    
+    @MainActor
+    private func transformTheme(_ response: HomeResponse) async {
+        let items = response.themes.map {
+            HomeThemeCollectionViewCellViewModel(themeImageUrl: $0.imageUrl)
+        }
+        state.collectionViewModels.themeViewModels = (HomeThemeHeaderCollectionReusableViewModel(headerText: "테마관"), items)
     }
 }
