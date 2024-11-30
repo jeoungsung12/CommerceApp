@@ -18,12 +18,3 @@ struct Banner: Decodable, Hashable {
     let id: Int
     let imageUrl: String
 }
-
-struct Product: Decodable, Hashable {
-    let id: Int
-    let imageUrl: String
-    let title: String
-    let discount: String
-    let originalPrice: Int
-    let discountPrice: Int
-}
