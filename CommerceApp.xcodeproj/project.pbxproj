@@ -56,6 +56,8 @@
 		E4F322F92CFDF89900D35702 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322F82CFDF89900D35702 /* OptionViewController.swift */; };
 		E4F322FB2CFDF8A100D35702 /* OptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322FA2CFDF8A100D35702 /* OptionViewModel.swift */; };
 		E4F322FD2CFDF8A800D35702 /* OptionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322FC2CFDF8A800D35702 /* OptionRootView.swift */; };
+		E4F323002CFDFBF000D35702 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322FF2CFDFBF000D35702 /* PurchaseViewController.swift */; };
+		E4F323022CFDFBF900D35702 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F323012CFDFBF900D35702 /* PurchaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		E4F322F82CFDF89900D35702 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		E4F322FA2CFDF8A100D35702 /* OptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewModel.swift; sourceTree = "<group>"; };
 		E4F322FC2CFDF8A800D35702 /* OptionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRootView.swift; sourceTree = "<group>"; };
+		E4F322FF2CFDFBF000D35702 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		E4F323012CFDFBF900D35702 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,7 @@
 		E4F322A42CF85B6900D35702 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				E4F322FE2CFDFBE000D35702 /* Purchase */,
 				E4F322F72CFDF87C00D35702 /* Option */,
 				E4F322DD2CFD7D5600D35702 /* Detail */,
 				E4F322CD2CFAFC1C00D35702 /* Favorite */,
@@ -363,6 +368,15 @@
 				E4F322FC2CFDF8A800D35702 /* OptionRootView.swift */,
 			);
 			path = Option;
+			sourceTree = "<group>";
+		};
+		E4F322FE2CFDFBE000D35702 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				E4F322FF2CFDFBF000D35702 /* PurchaseViewController.swift */,
+				E4F323012CFDFBF900D35702 /* PurchaseViewModel.swift */,
+			);
+			path = Purchase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +526,7 @@
 				E4F322F42CFD9AD900D35702 /* DetailViewController.swift in Sources */,
 				E4F322B92CF8788100D35702 /* NetworkService.swift in Sources */,
 				E4F322932CF73B1700D35702 /* CPColor.swift in Sources */,
+				E4F323002CFDFBF000D35702 /* PurchaseViewController.swift in Sources */,
 				E4F322F92CFDF89900D35702 /* OptionViewController.swift in Sources */,
 				E4F322B52CF86AFD00D35702 /* HomeProductCollectionViewCell.swift in Sources */,
 				E4F322952CF73B9200D35702 /* CPFont.swift in Sources */,
@@ -537,6 +552,7 @@
 				E4F322A92CF85DA400D35702 /* HomeViewController.swift in Sources */,
 				E4F322E02CFD7D6A00D35702 /* DetailRootView.swift in Sources */,
 				E4F322C42CF8AFC400D35702 /* Numeric + Extension.swift in Sources */,
+				E4F323022CFDFBF900D35702 /* PurchaseViewModel.swift in Sources */,
 				E4F322EE2CFD8EDD00D35702 /* DetailMoreView.swift in Sources */,
 				E4F3225E2CF72FE700D35702 /* SceneDelegate.swift in Sources */,
 				E4F322D52CFAFE8300D35702 /* FavoriteResponse.swift in Sources */,

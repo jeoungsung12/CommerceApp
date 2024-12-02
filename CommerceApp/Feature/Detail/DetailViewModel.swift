@@ -34,6 +34,7 @@ final class DetailViewModel: ObservableObject {
     
     @Published private(set) var state: State = State()
     private(set) var showOptionViewController: PassthroughSubject<Void, Never> = PassthroughSubject<Void, Never>()
+    private(set) var showPurchaseViewController: PassthroughSubject<Void, Never> = PassthroughSubject<Void, Never>()
     private var loadDataTask: Task<Void, Never>?
     private var isFavorite: Bool = false
     private var needShowMore: Bool = true
@@ -55,7 +56,7 @@ final class DetailViewModel: ObservableObject {
         case .didTapFavorite:
             Task { await toggleFavorite() }
         case .didTapPurchase:
-            break
+            showPurchaseViewController.send()
         }
     }
     
