@@ -15,7 +15,7 @@ final class HomeSperateLineCollectionViewCell: UICollectionViewCell {
     static let reusableId: String = "HomeSperateLineCollectionViewCell"
     
     func setViewModel(_ viewModel: HomeSperateLineCollectionViewCellViewModel) {
-        contentView.backgroundColor = CPColor.gray1
+        contentView.backgroundColor = CPColor.UIKit.gray1
     }
 }
  

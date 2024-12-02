@@ -37,7 +37,7 @@ final class HomeViewController: UIViewController {
         self.bindgingViewModel()
         
         collectionView.collectionViewLayout = compositinalLayout
-        
+        collectionView.delegate = self
         self.viewModel.process(action: .loadData)
         self.viewModel.process(action: .loadCoupon)
     }
@@ -188,3 +188,21 @@ final class HomeViewController: UIViewController {
     }
 }
  
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch currentSection[indexPath.section] {
+        case .banner:
+            break
+        case .separateLine1, .separateLine2:
+            break
+        case .couponButton:
+            break
+        case .horizontalProductItem, .verticalProductItem:
+            let storyboard: UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
+            guard let viewController: UIViewController = storyboard.instantiateInitialViewController() else { return }
+            navigationController?.pushViewController(viewController, animated: true)
+        case .theme:
+            break
+        }
+    }
+}
