@@ -24,9 +24,9 @@ final class FavoriteViewModel {
     func process(_ action: Action) {
         switch action {
         case .getFavoriteFromAPI:
-            return
+            self.getFavoriteFromAPI()
         case .getFavoriteSuccess(let favoriteResponse):
-            print(favoriteResponse)
+            translateFavoriteItemViewModel(favoriteResponse)
         case .getFavoriteFailure(let error):
             print(error)
         case .didTapPurchaseButton:

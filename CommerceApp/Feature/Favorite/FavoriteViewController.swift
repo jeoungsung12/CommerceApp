@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Combine
 class FavoriteViewController: UIViewController {
     private typealias DataSource = UITableViewDiffableDataSource<Section, AnyHashable>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, AnyHashable>
@@ -20,16 +20,27 @@ class FavoriteViewController: UIViewController {
         dataSource.snapshot().sectionIdentifiers as [Section]
     }
     
+    private var viewModel: FavoriteViewModel = FavoriteViewModel()
+    private var subscriptions = Set<AnyCancellable>()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bindViewModel()
+        viewModel.process(.getFavoriteFromAPI)
+    }
+    
+    private func bindViewModel() {
+        viewModel.state.$tableViewModel
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.applySnapShot()
+            }.store(in: &self.subscriptions)
     }
     
     private func setDataSource() -> DataSource {
         let dataSource: DataSource = UITableViewDiffableDataSource(tableView: tableView) { [weak self] tableView, indexPath, viewModel in
             switch self?.currentSection[indexPath.section] {
             case .favorite:
-                self?.favoriteCell(tableView, indexPath, viewModel)
+                return self?.favoriteCell(tableView, indexPath, viewModel)
             case .none: return .init()
             }
         }
@@ -43,4 +54,12 @@ class FavoriteViewController: UIViewController {
         return cell
     }
     
+    private func applySnapShot() {
+        var snapShot: SnapShot = SnapShot()
+        if let favoritesViewModel = viewModel.state.tableViewModel {
+            snapShot.appendSections([.favorite])
+            snapShot.appendItems(favoritesViewModel, toSection: .favorite)
+        }
+        dataSource.apply(snapShot)
+    }
 }

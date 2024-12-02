@@ -26,6 +26,5 @@ class FavoriteTableViewCell: UITableViewCell {
         productItemImageView.kf.setImage(with: URL(string: viewModel.imageUrl))
         productTitleLabel.text = viewModel.productName
         productPriceLabel.text = viewModel.productPrice
-        
     }
 }
