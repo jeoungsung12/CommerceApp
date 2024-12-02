@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  OptionViewController.swift
 //  CommerceApp
 //
 //  Created by 정성윤 on 12/2/24.
@@ -7,18 +7,15 @@
 
 import UIKit
 import SwiftUI
-import Combine
 
-class DetailViewController: UIViewController {
-    let viewModel: DetailViewModel = DetailViewModel()
-    lazy var rootView: UIHostingController = UIHostingController(rootView: DetailRootView(viewModel: viewModel))
-    var subscriptions = Set<AnyCancellable>()
+class OptionViewController: UIViewController {
+    let viewModel: OptionViewModel = OptionViewModel()
+    lazy var rootView: UIHostingController = UIHostingController(rootView: OptionRootView(viewModel: viewModel))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addRootView()
-        bindViewModelAction()
     }
     
     private func addRootView() {
@@ -33,15 +30,4 @@ class DetailViewController: UIViewController {
             rootView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    private func bindViewModelAction() {
-        viewModel.showOptionViewController
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                let viewController = OptionViewController()
-                self?.navigationController?.pushViewController(viewController, animated: true)
-            }
-            .store(in: &subscriptions)
-    }
-    
 }

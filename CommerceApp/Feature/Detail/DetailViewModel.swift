@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class DetailViewModel: ObservableObject {
     struct State {
@@ -32,6 +33,7 @@ final class DetailViewModel: ObservableObject {
     }
     
     @Published private(set) var state: State = State()
+    private(set) var showOptionViewController: PassthroughSubject<Void, Never> = PassthroughSubject<Void, Never>()
     private var loadDataTask: Task<Void, Never>?
     private var isFavorite: Bool = false
     private var needShowMore: Bool = true
@@ -45,15 +47,13 @@ final class DetailViewModel: ObservableObject {
         case let .getDataFailure(error):
             print(error)
         case let .loading(isLoading):
-            state.isLoading = isLoading
+            Task { await toggleLoading(isLoading) }
         case .didTapChangeOption:
-            break
+            showOptionViewController.send()
         case .didTapMore:
-            needShowMore = false
-            state.more = needShowMore ? DetailMoreViewModel() : nil
+            Task { await toggleMore() }
         case .didTapFavorite:
-            isFavorite.toggle()
-            state.purchase = DetailPurchaseViewModel(isFavorite: isFavorite)
+            Task { await toggleFavorite() }
         case .didTapPurchase:
             break
         }
@@ -78,6 +78,23 @@ extension DetailViewModel {
                 process(action: .getDataFailure(error))
             }
         }
+    }
+    
+    @MainActor
+    private func toggleLoading(_ isLoading: Bool) async {
+        state.isLoading = isLoading
+    }
+    
+    @MainActor
+    private func toggleFavorite() async {
+        isFavorite.toggle()
+        state.purchase = DetailPurchaseViewModel(isFavorite: isFavorite)
+    }
+    
+    @MainActor
+    private func toggleMore() async {
+        needShowMore = false
+        state.more = needShowMore ? DetailMoreViewModel() : nil
     }
     
     @MainActor
