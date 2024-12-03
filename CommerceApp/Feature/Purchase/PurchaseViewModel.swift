@@ -35,7 +35,6 @@ extension PurchaseViewModel {
     private func loadData() async {
         
     }
-    
     @MainActor
     private func didTapPurchaseButton() async {
         showPaymentViewController.send()
