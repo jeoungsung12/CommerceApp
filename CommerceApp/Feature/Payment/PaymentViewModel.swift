@@ -10,7 +10,7 @@ import Combine
 
 final class PaymentViewModel {
     enum Action {
-        
+        case load
     }
     struct State {
         
@@ -20,7 +20,8 @@ final class PaymentViewModel {
     
     func process(_ action: Action) {
         switch action {
-            
+        case .load:
+            break
         }
     }
     
