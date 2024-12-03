@@ -32,6 +32,14 @@ final class PurchaseViewController: UIViewController {
                 self?.rootView.setPurchaseItemStack(viewModels)
             }
             .store(in: &subscriptions)
+        
+        viewModel.showPaymentViewController
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                let VC = PaymentViewController()
+                self?.navigationController?.pushViewController(VC, animated: true)
+            }
+            .store(in: &subscriptions)
     }
 }
 
