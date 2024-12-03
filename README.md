@@ -43,14 +43,6 @@
 
 ---
 
-## 📸 시연 이미지
-
-<img width="1021" alt="상세 화면" src="https://github.com/user-attachments/assets/55fbdd6b-2037-4a3e-b81b-27da3b398d2f">
-
-<img width="262" alt="결제 화면" src="https://github.com/user-attachments/assets/35e8c62c-0f3c-4286-82df-b24400770c12">
-
----
-
 ## 🔗 개발 기술 스택
 ![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)  
 ![UIKit](https://img.shields.io/badge/UIKit-2396F3?style=for-the-badge&logo=apple&logoColor=white)  
@@ -64,3 +56,8 @@
 - UIKit과 SwiftUI 혼용 기술 활용
 - 네트워크 및 메모리 관리 최적화
 - CI/CD 자동화를 통한 효율적인 개발 프로세스 구축
+## 📸 시연 이미지
+
+<img width="262" alt="결제 화면" src="https://github.com/user-attachments/assets/35e8c62c-0f3c-4286-82df-b24400770c12">
+
+---
