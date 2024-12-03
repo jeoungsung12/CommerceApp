@@ -58,6 +58,7 @@
 		E4F322FD2CFDF8A800D35702 /* OptionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322FC2CFDF8A800D35702 /* OptionRootView.swift */; };
 		E4F323002CFDFBF000D35702 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F322FF2CFDFBF000D35702 /* PurchaseViewController.swift */; };
 		E4F323022CFDFBF900D35702 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F323012CFDFBF900D35702 /* PurchaseViewModel.swift */; };
+		E4F323042CFED6CC00D35702 /* PurchaseSelectedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F323032CFED6CC00D35702 /* PurchaseSelectedItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		E4F322FC2CFDF8A800D35702 /* OptionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRootView.swift; sourceTree = "<group>"; };
 		E4F322FF2CFDFBF000D35702 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		E4F323012CFDFBF900D35702 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
+		E4F323032CFED6CC00D35702 /* PurchaseSelectedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSelectedItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +377,7 @@
 			children = (
 				E4F322FF2CFDFBF000D35702 /* PurchaseViewController.swift */,
 				E4F323012CFDFBF900D35702 /* PurchaseViewModel.swift */,
+				E4F323032CFED6CC00D35702 /* PurchaseSelectedItemView.swift */,
 			);
 			path = Purchase;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				E4F322932CF73B1700D35702 /* CPColor.swift in Sources */,
 				E4F323002CFDFBF000D35702 /* PurchaseViewController.swift in Sources */,
 				E4F322F92CFDF89900D35702 /* OptionViewController.swift in Sources */,
+				E4F323042CFED6CC00D35702 /* PurchaseSelectedItemView.swift in Sources */,
 				E4F322B52CF86AFD00D35702 /* HomeProductCollectionViewCell.swift in Sources */,
 				E4F322952CF73B9200D35702 /* CPFont.swift in Sources */,
 				E4F322D12CFAFC3D00D35702 /* FavoriteViewController.swift in Sources */,
